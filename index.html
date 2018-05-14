@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>区块链革命行业</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        /* Remove the navbar's default margin-bottom and rounded borders */
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+
+        /* Add a gray background color and some padding to the footer */
+        footer {
+            background-color: #f2f2f2;
+            padding: 25px;
+        }
+
+        .carousel-inner img {
+            width: 100%; /* Set width to 100% */
+            margin: auto;
+            min-height: 200px;
+            /*max-height: 500px;*/
+        }
+
+        /* Hide the carousel text when the screen is less than 600 pixels wide */
+        @media (max-width: 600px) {
+            .carousel-caption {
+                display: none;
+            }
+        }
+
+        .candicate-table {
+            margin-left: 80px;
+            margin-right: 80px;
+            margin-top: 40px;
+        }
+
+        .vertical-align {
+            vertical-align: inherit !important;
+        }
+
+        .noExtension {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 40px;
+            background: orange;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .header-flag {
+            width: 100%;
+            height: 500px;
+        }
+
+        .header-title {
+            margin-left: 80px;
+            margin-right: 80px;
+            height: 140px;
+            background: white;
+            margin-top: -80px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">投票</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="https://incentive.nebulas.io/cn/signup.html?invite=C5Dqq">Nas竞赛</a></li>
+                <li><a href="https://github.com/YongDing">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img src="./img/blockchain.jpg" alt="Image">
+            <div class="carousel-caption">
+                <h3>未来最有可能被区块链颠覆的十大行业</h3>
+                <p>区块链技术将很可能在接下来的5到10年内颠覆现有的许多产业，请为你觉得最有可能被颠覆的行业投票</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Left and right controls -->
+<!--<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">-->
+<!--<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>-->
+<!--<span class="sr-only">Previous</span>-->
+<!--</a>-->
+<!--<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">-->
+<!--<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>-->
+<!--<span class="sr-only">Next</span>-->
+<!--</a>-->
+</div>
+
+
+<div class="container">
+    <div class="candicate-table">
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th class="col-md-2" scope="col">行业</th>
+                <th scope="col">说明</th>
+                <th class="col-md-2" scope="col">Votes</th>
+                <th scope="col">#</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <th scope="row">
+                    <b>物联网</b>
+                </th>
+                <td class='vertical-align'>区块链技术至少可以在物联网的三个方面能够成为其合适的解决方案：大数据管理，安全和透明性，还有对基于相互连接的智能设备之间服务交换的微交易带来的便利
+                </td>
+                <td class='vertical-align' id='iot-vote'>等待调用合约更新中...</td>
+                <td class='vertical-align'>
+                    <button data-vote="iot" type="button" class="btn btn-primary vote">Vote</button>
+                </td>
+            </tr>
+
+            <tr>
+                <th scope="row">
+                    <b>网络安全</b>
+                </th>
+                <td class='vertical-align'>区块链可以从三方面增加安全性：拦截身份盗窃、防止数据篡改、阻止拒接服务攻击</td>
+                <td class='vertical-align' id='security-vote'>等待调用合约更新中...</td>
+                <td class='vertical-align'>
+                    <button data-vote="security" type="button" class="btn btn-primary vote">Vote</button>
+                </td>
+            </tr>
+
+            <tr>
+                <th scope="row">
+                    <b>云存储</b>
+                </th>
+                <td class='vertical-align'>区块链技术让云存储在面对攻击时更安全，容错度更高, 区块链技术可以支持加密数据的分布式存储，是协同云存储的核心。</td>
+                <td class='vertical-align' id='cloud-vote'>等待调用合约更新中...</td>
+                <td class='vertical-align'>
+                    <button data-vote="cloud" type="button" class="btn btn-primary vote">Vote</button>
+                </td>
+            </tr>
+
+            <tr>
+                <th scope="row">
+                    <b>银行业</b>
+                </th>
+                <td class='vertical-align'>
+                    区块链技术在金融领域的应用将完全改变交易流程和记录保存的方式，从而大幅降低交易成本，显著提升效率，能让人们用极低的手续费就可以将钱汇到不同的国家和地区。
+                </td>
+                <td class='vertical-align' id='banking-vote'>等待调用合约更新中...</td>
+                <td class='vertical-align'>
+                    <button data-vote="banking" type="button" class="btn btn-primary vote">Vote</button>
+                </td>
+            </tr>
+
+            <tr>
+                <th scope="row">
+                    <b>保险业</b>
+                </th>
+                <td class='vertical-align'>全球化的保险市场的基石是信任管理，区块链是一种可以管理信任的新方法。</td>
+                <td class='vertical-align' id='insurance-vote'>等待调用合约更新中...</td>
+                <td class='vertical-align'>
+                    <button data-vote="insurance" type="button" class="btn btn-primary vote">Vote</button>
+                </td>
+            </tr>
+
+            <tr>
+                <th scope="row">
+                    <b>供应链管理</b>
+                </th>
+                <td class='vertical-align'>
+                    运用了区块链技术后，交易将被备份在一个永久的分散式记录中，能完全透明和安全地被监控。这一举措能明显减少时间延误和人为失误。还能在供应链的每一点上监测成本，劳动力甚至废物和排放
+                </td>
+                <td class='vertical-align' id='supplychain-vote'>等待调用合约更新中...</td>
+                <td class='vertical-align'>
+                    <button data-vote="supplychain" type="button" class="btn btn-primary vote">Vote</button>
+                </td>
+            </tr>
+
+            <tr>
+                <th scope="row">
+                    <b>投票</b>
+                </th>
+                <td class='vertical-align'>区块链科技可以被运用到选民注册、身份确认，通过电子统计确保只有正当的投票被记录，并且投票不会被篡改或者移除</td>
+                <td class='vertical-align' id='vote-vote'>等待调用合约更新中...</td>
+                <td class='vertical-align'>
+                    <button data-vote="vote" type="button" class="btn btn-primary vote">Vote</button>
+                </td>
+            </tr>
+
+            <tr>
+                <th scope="row">
+                    <b>医疗</b>
+                </th>
+                <td class='vertical-align'>
+                    医院面对的很大的挑战之一是用于储存和分享的平台缺乏安全性。医院也常因为数据系统落后而饱受黑客攻击之害。区块链技术可以让医院安全地存储医疗记录之类的数据，并且可以与授权的专家和病人共享医疗健康信息，医疗流程透明化，医疗事故责任可追溯，用于缴费和保险的智能合约等等
+                </td>
+                <td class='vertical-align' id='health-vote'>等待调用合约更新中...</td>
+                <td class='vertical-align'>
+                    <button data-vote="health" type="button" class="btn btn-primary vote">Vote</button>
+                </td>
+            </tr>
+
+            <tr>
+                <th scope="row">
+                    <b>众筹</b>
+                </th>
+                <td class='vertical-align'>
+                    在基于区块链的众筹活动中，信任是由智能合约和网络声望系统产生的，这也就排除了中间人存在的必要。新的项目可以通过自己发放代表一定价值的代币来筹款，这些代币可以在稍后换成产品，服务或者现金，而这是个很有潜力的领域。
+                </td>
+                <td class='vertical-align' id='crowdfunding-vote'>等待调用合约更新中...</td>
+                <td class='vertical-align'>
+                    <button data-vote="crowdfunding" type="button" class="btn btn-primary vote">Vote</button>
+                </td>
+            </tr>
+
+            <tr>
+                <th scope="row">
+                    <b>其他行业</b>
+                </th>
+                <td class='vertical-align'>除了以上几个行业，其他行业也会有被颠覆的可能，只要行业之间缺乏安全性，信赖等</td>
+                <td class='vertical-align' id='other-vote'>等待调用合约更新中...</td>
+                <td class='vertical-align'>
+                    <button data-vote="other" type="button" class="btn btn-primary vote">Vote</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+<br>
+
+<footer class="container-fluid text-center">
+    <p>本程序部署在NAS MianNet, 请注意切换网络</p>
+    <a href="https://incentive.nebulas.io/cn/signup.html?invite=C5Dqq">激励计划</a>
+</footer>
+
+</body>
+<div class="noExtension hide" id="noExtension">
+    NOTE: Please install <a target="_blank" href="https://github.com/ChengOrangeJu/WebExtensionWallet">WebExtensionWallet</a>
+    to use the application.
+</div>
+<script src=js/jquery-3.3.1.min.js></script>
+<script src=js/nebPay.js></script>
+<script>
+    var NebPay = require("nebpay");     //https://github.com/nebulasio/
+    var nebPay = new NebPay();
+
+    const dappAddress = "n1yh1L2mvet7Hq93v7jhKMSiVPNk9SEoEts";
+
+    // if(typeof(webExtensionWallet) === "undefined"){
+    //   $("#noExtension").removeClass("hide")
+    // }
+
+    $('.vote').click(vote_click)
+
+    function vote_click(){
+        var to = dappAddress;
+        var value = "0";
+        var callFunction = "save";
+        var callArgs = "[\"" + this.dataset.vote + "\"]"; //in the form of ["args"]
+        nebPay.call(to, value, callFunction, callArgs, {
+            listener:page_update
+        });
+    }
+
+    function consolelog(resp) {
+        console.log("response of vote click: " + JSON.stringify(resp))
+    }
+
+    function list_vote(resp){
+        nas_result = resp.result
+        var json_result = JSON.parse(nas_result)
+        json_result.forEach(function(item){
+            $('#'+item.name+'-vote').text(item.vote)
+        });
+    }
+
+    function page_update(){
+        const INDUSTRIES = ['iot', 'security', 'cloud', 'banking', 'insurance', 'supplychain', 'vote', 'health', 'crowdfunding', 'other'];
+        INDUSTRIES.map(candidate => {
+            var to = dappAddress;
+            var value = "0";
+            var callFunction = "list";
+            var callArgs = "[]";
+            nebPay.simulateCall(to, value, callFunction, callArgs, {
+                listener:list_vote
+            });
+        })
+    }
+
+    $(document).ready(page_update)
+</script>
+</html>
+
