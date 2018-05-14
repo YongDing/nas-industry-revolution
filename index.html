@@ -128,6 +128,7 @@
     <div class="row text-center">
         <br>
         <a class="btn btn-primary" href="https://incentive.nebulas.io/cn/signup.html?invite=C5Dqq" role="button">参加激励计划, 赢取最少100 NAS奖励</a>
+
     </div>
     <div class="candicate-table">
         <table class="table">
@@ -270,23 +271,22 @@
     <p>本程序部署在NAS MianNet, 请注意切换网络</p>
     <a href="https://incentive.nebulas.io/cn/signup.html?invite=C5Dqq">激励计划</a>
 </footer>
-
-</body>
-<div class="noExtension hide" id="noExtension">
+<div class="noExtension hide text-center" id="noExtension">
     NOTE: Please install <a target="_blank" href="https://github.com/ChengOrangeJu/WebExtensionWallet">WebExtensionWallet</a>
     to use the application.
 </div>
+</body>
+
 <script src=js/jquery-3.3.1.min.js></script>
 <script src=js/nebPay.js></script>
+<script src=js/nebulas.js></script>
 <script>
     var NebPay = require("nebpay");     //https://github.com/nebulasio/
     var nebPay = new NebPay();
 
     const dappAddress = "n1yh1L2mvet7Hq93v7jhKMSiVPNk9SEoEts";
 
-    // if(typeof(webExtensionWallet) === "undefined"){
-    //   $("#noExtension").removeClass("hide")
-    // }
+
 
     $('.vote').click(vote_click)
 
@@ -312,19 +312,26 @@
         });
     }
 
+    var nebulas = require("nebulas"),
+        Account = nebulas.Account,
+        neb = new nebulas.Neb();
     function page_update(){
-        const INDUSTRIES = ['iot', 'security', 'cloud', 'banking', 'insurance', 'supplychain', 'vote', 'health', 'crowdfunding', 'other'];
-        INDUSTRIES.map(candidate => {
-            var to = dappAddress;
-            var value = "0";
-            var callFunction = "list";
-            var callArgs = "[]";
-            nebPay.simulateCall(to, value, callFunction, callArgs, {
-                listener:list_vote
-            });
-        })
+        if(typeof(webExtensionWallet) === "undefined"){
+            console.log("1123123123123123123");
+            $('#noExtension').removeClass("hide");
+        }else{
+            const INDUSTRIES = ['iot', 'security', 'cloud', 'banking', 'insurance', 'supplychain', 'vote', 'health', 'crowdfunding', 'other'];
+            INDUSTRIES.map(candidate => {
+                var to = dappAddress;
+                var value = "0";
+                var callFunction = "list";
+                var callArgs = "[]";
+                nebPay.simulateCall(to, value, callFunction, callArgs, {
+                    listener:list_vote
+                });
+            })
+        }
     }
-
     $(document).ready(page_update)
 </script>
 </html>
