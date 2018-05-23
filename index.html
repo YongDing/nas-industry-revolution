@@ -123,12 +123,23 @@
 <!--</a>-->
 </div>
 
-
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="gridSystemModalLabel">Note:</h4>
+            </div>
+            <div class="modal-body">
+                投票需要消耗gas, 请安装<a target="_blank" href="https://github.com/ChengOrangeJu/WebExtensionWallet">WebExtensionWallet</a>插件
+            </div>
+        </div>
+    </div>
+</div>
 <div class="container">
     <div class="row text-center">
         <br>
         <a class="btn btn-primary" href="https://incentive.nebulas.io/cn/signup.html?invite=C5Dqq" role="button">参加激励计划, 赢取最少100 NAS奖励</a>
-
     </div>
     <div class="candicate-table">
         <table class="table">
@@ -150,7 +161,7 @@
                 </td>
                 <td class='vertical-align' id='iot-vote'>等待调用合约更新中...</td>
                 <td class='vertical-align'>
-                    <button data-vote="iot" type="button" class="btn btn-primary vote">Vote</button>
+                    <button data-vote="iot" type="button" class="btn btn-primary vote" id="iot-button">Vote</button>
                 </td>
             </tr>
 
@@ -161,7 +172,7 @@
                 <td class='vertical-align'>区块链可以从三方面增加安全性：拦截身份盗窃、防止数据篡改、阻止拒接服务攻击</td>
                 <td class='vertical-align' id='security-vote'>等待调用合约更新中...</td>
                 <td class='vertical-align'>
-                    <button data-vote="security" type="button" class="btn btn-primary vote">Vote</button>
+                    <button data-vote="security" type="button" class="btn btn-primary vote" id="security-button">Vote</button>
                 </td>
             </tr>
 
@@ -172,7 +183,7 @@
                 <td class='vertical-align'>区块链技术让云存储在面对攻击时更安全，容错度更高, 区块链技术可以支持加密数据的分布式存储，是协同云存储的核心。</td>
                 <td class='vertical-align' id='cloud-vote'>等待调用合约更新中...</td>
                 <td class='vertical-align'>
-                    <button data-vote="cloud" type="button" class="btn btn-primary vote">Vote</button>
+                    <button data-vote="cloud" type="button" class="btn btn-primary vote" id="cloud-button">Vote</button>
                 </td>
             </tr>
 
@@ -185,7 +196,7 @@
                 </td>
                 <td class='vertical-align' id='banking-vote'>等待调用合约更新中...</td>
                 <td class='vertical-align'>
-                    <button data-vote="banking" type="button" class="btn btn-primary vote">Vote</button>
+                    <button data-vote="banking" type="button" class="btn btn-primary vote" id="banking-button">Vote</button>
                 </td>
             </tr>
 
@@ -196,7 +207,7 @@
                 <td class='vertical-align'>全球化的保险市场的基石是信任管理，区块链是一种可以管理信任的新方法。</td>
                 <td class='vertical-align' id='insurance-vote'>等待调用合约更新中...</td>
                 <td class='vertical-align'>
-                    <button data-vote="insurance" type="button" class="btn btn-primary vote">Vote</button>
+                    <button data-vote="insurance" type="button" class="btn btn-primary vote" id="insurance-button">Vote</button>
                 </td>
             </tr>
 
@@ -209,7 +220,7 @@
                 </td>
                 <td class='vertical-align' id='supplychain-vote'>等待调用合约更新中...</td>
                 <td class='vertical-align'>
-                    <button data-vote="supplychain" type="button" class="btn btn-primary vote">Vote</button>
+                    <button data-vote="supplychain" type="button" class="btn btn-primary vote" id="supplychain-button">Vote</button>
                 </td>
             </tr>
 
@@ -220,7 +231,7 @@
                 <td class='vertical-align'>区块链科技可以被运用到选民注册、身份确认，通过电子统计确保只有正当的投票被记录，并且投票不会被篡改或者移除</td>
                 <td class='vertical-align' id='vote-vote'>等待调用合约更新中...</td>
                 <td class='vertical-align'>
-                    <button data-vote="vote" type="button" class="btn btn-primary vote">Vote</button>
+                    <button data-vote="vote" type="button" class="btn btn-primary vote" id="vote-button">Vote</button>
                 </td>
             </tr>
 
@@ -233,7 +244,7 @@
                 </td>
                 <td class='vertical-align' id='health-vote'>等待调用合约更新中...</td>
                 <td class='vertical-align'>
-                    <button data-vote="health" type="button" class="btn btn-primary vote">Vote</button>
+                    <button data-vote="health" type="button" class="btn btn-primary vote" id="health-button">Vote</button>
                 </td>
             </tr>
 
@@ -246,7 +257,7 @@
                 </td>
                 <td class='vertical-align' id='crowdfunding-vote'>等待调用合约更新中...</td>
                 <td class='vertical-align'>
-                    <button data-vote="crowdfunding" type="button" class="btn btn-primary vote">Vote</button>
+                    <button data-vote="crowdfunding" type="button" class="btn btn-primary vote" id="crowdfunding-button">Vote</button>
                 </td>
             </tr>
 
@@ -257,7 +268,7 @@
                 <td class='vertical-align'>除了以上几个行业，其他行业也会有被颠覆的可能，只要行业之间缺乏安全性，信赖等</td>
                 <td class='vertical-align' id='other-vote'>等待调用合约更新中...</td>
                 <td class='vertical-align'>
-                    <button data-vote="other" type="button" class="btn btn-primary vote">Vote</button>
+                    <button data-vote="other" type="button" class="btn btn-primary vote" id="other-button">Vote</button>
                 </td>
             </tr>
             </tbody>
@@ -274,6 +285,8 @@
 <div class="noExtension hide text-center" id="noExtension">
     NOTE: Please install <a target="_blank" href="https://github.com/ChengOrangeJu/WebExtensionWallet">WebExtensionWallet</a>
     to use the application.
+    <br>
+    你没安装钱包插件，投票会消耗gas
 </div>
 </body>
 
@@ -281,13 +294,17 @@
 <script src=js/nebPay.js></script>
 <script src=js/nebulas.js></script>
 <script>
+    var INDUSTRIES = ['iot', 'security', 'cloud', 'banking', 'insurance', 'supplychain', 'vote', 'health', 'crowdfunding', 'other'];
     var NebPay = require("nebpay");     //https://github.com/nebulasio/
     var nebPay = new NebPay();
+    var nebulas = require("nebulas"),
+        Account = nebulas.Account,
+        neb = new nebulas.Neb();
+    neb.setRequest(new nebulas.HttpRequest("https://mainnet.nebulas.io"));
 
     const dappAddress = "n1yh1L2mvet7Hq93v7jhKMSiVPNk9SEoEts";
-
-
-
+    var serialNumber;
+    var intervalQuery;
     $('.vote').click(vote_click)
 
     function vote_click(){
@@ -295,42 +312,80 @@
         var value = "0";
         var callFunction = "save";
         var callArgs = "[\"" + this.dataset.vote + "\"]"; //in the form of ["args"]
-        nebPay.call(to, value, callFunction, callArgs, {
-            listener:page_update
-        });
+        var contract = {
+            "function": callFunction,
+            "args": callArgs
+        }
+        if(typeof(webExtensionWallet) === "undefined"){
+            console.log("no install web extension wallet");
+            var nonce = "0"
+            var gas_price = "1000000"
+            var gas_limit = "2000000"
+            var from = Account.NewAccount().getAddressString();
+            neb.api.call(from,dappAddress,value,nonce,gas_price,gas_limit,contract).then(function (resp){
+                console.log(resp);
+            }).catch(function (err) {
+                //cbSearch(err)
+                console.log("error:" + err.message)
+            })
+            $('#noExtension').removeClass("hide");
+        }else{
+            serialNumber = nebPay.call(to, value, callFunction, callArgs, {
+                listener:consolelog
+            });
+            intervalQuery = setInterval(function () {
+                page_update();
+            }, 5000);
+        }
     }
+
+
 
     function consolelog(resp) {
         console.log("response of vote click: " + JSON.stringify(resp))
     }
 
     function list_vote(resp){
-        nas_result = resp.result
-        var json_result = JSON.parse(nas_result)
-        json_result.forEach(function(item){
-            $('#'+item.name+'-vote').text(item.vote)
-        });
+        nas_result = resp.result;
+        var json_result = JSON.parse(nas_result);
+        if(json_result.length > 0){
+            json_result.forEach(function(item){
+                $('#'+item.name+'-vote').text(item.vote)
+            });
+            clearInterval(intervalQuery);
+        }
     }
 
-    var nebulas = require("nebulas"),
-        Account = nebulas.Account,
-        neb = new nebulas.Neb();
     function page_update(){
-        if(typeof(webExtensionWallet) === "undefined"){
-            console.log("1123123123123123123");
-            $('#noExtension').removeClass("hide");
-        }else{
-            const INDUSTRIES = ['iot', 'security', 'cloud', 'banking', 'insurance', 'supplychain', 'vote', 'health', 'crowdfunding', 'other'];
-            INDUSTRIES.map(candidate => {
-                var to = dappAddress;
-                var value = "0";
-                var callFunction = "list";
-                var callArgs = "[]";
-                nebPay.simulateCall(to, value, callFunction, callArgs, {
-                    listener:list_vote
-                });
-            })
+        var value = "0";
+        var callFunction = "list";
+        var callArgs = "[]";
+        var contract = {
+            "function": callFunction,
+            "args": callArgs
         }
+        if(typeof(webExtensionWallet) === "undefined") {
+            console.log("no install web extension wallet");
+            $('#noExtension').removeClass("hide");
+            for(var i=0; i<INDUSTRIES.length; i++){
+                $('.vote').get(i).setAttribute("data-toggle","modal");
+                $('.vote').get(i).setAttribute("data-target",".bs-example-modal-lg");
+            }
+        }else{
+            for(var i=0; i<INDUSTRIES.length; i++){
+                $('.vote').get(i).removeAttribute("data-toggle");
+                $('.vote').get(i).removeAttribute("data-target");
+            }
+        }
+        var nonce = "0";
+        var gas_price = "1000000";
+        var gas_limit = "2000000";
+        var from = Account.NewAccount().getAddressString();
+        neb.api.call(from,dappAddress,value,nonce,gas_price,gas_limit,contract).then(function (resp){
+            list_vote(resp);
+        }).catch(function (err) {
+            console.log("error:" + err.message)
+        })
     }
     $(document).ready(page_update)
 </script>
