@@ -307,6 +307,21 @@
     var intervalQuery;
     $('.vote').click(vote_click)
 
+    function arraysEqual(a, b) {
+        if (a === b) return true;
+        if (a == null || b == null) return false;
+        if (a.length != b.length) return false;
+
+        // If you don't care about the order of the elements inside
+        // the array, you should sort both arrays here.
+
+        for (var i = 0; i < a.length; ++i) {
+            if (a[i]["name"] !== b[i]["name"]) return false;
+            if (a[i]["vote"] !== b[i]["vote"]) return false;
+        }
+        return true;
+    }
+
     function vote_click(){
         var to = dappAddress;
         var value = "0";
@@ -331,30 +346,45 @@
             $('#noExtension').removeClass("hide");
         }else{
             serialNumber = nebPay.call(to, value, callFunction, callArgs, {
-                listener:consolelog
+                listener:page_update
             });
-            intervalQuery = setInterval(function () {
-                page_update();
-            }, 5000);
+//            intervalQuery = setInterval(function () {
+//                page_update();
+//            }, 2000);
         }
     }
 
 
+    function sleep (time) {
+        return new Promise((resolve) => setTimeout(resolve, time));
+    }
 
     function consolelog(resp) {
         console.log("response of vote click: " + JSON.stringify(resp))
     }
 
+    var votelist;
     function list_vote(resp){
         nas_result = resp.result;
         var json_result = JSON.parse(nas_result);
-        if(json_result.length > 0){
-            json_result.forEach(function(item){
-                $('#'+item.name+'-vote').text(item.vote)
-            });
-            clearInterval(intervalQuery);
+        if(!arraysEqual(votelist, json_result)){
+            console.log(votelist);
+            console.log(json_result);
+            votelist = json_result;
+            if(json_result.length > 0){
+                json_result.forEach(function(item){
+                    $('#'+item.name+'-vote').text(item.vote)
+                });
+//                clearInterval(intervalQuery);
+            }
+        }else{
+            sleep(2000).then(() => {
+                page_update();
+            })
         }
+
     }
+
 
     function page_update(){
         var value = "0";
@@ -364,6 +394,7 @@
             "function": callFunction,
             "args": callArgs
         }
+        console.log("page_update")
         if(typeof(webExtensionWallet) === "undefined") {
             console.log("no install web extension wallet");
             $('#noExtension').removeClass("hide");
